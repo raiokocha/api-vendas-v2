@@ -1,3 +1,4 @@
+.docker/dbdata
 .idea/
 .vscode/
 node_modules/
@@ -10,3 +11,4 @@ dist
 
 uploads/*
 !uploads/.gitkeep
+.DS_Store

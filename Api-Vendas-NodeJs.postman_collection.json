@@ -1,0 +1,571 @@
+{
+	"info": {
+		"_postman_id": "d7f89be9-e735-418c-bd5d-f2e08f21f617",
+		"name": "Api-Vendas-NodeJs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Criar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Game Boy\",\r\n    \"price\": 99.00,\r\n    \"quantity\": 50\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_nodejs}}/products",
+							"host": [
+								"{{base_url_nodejs}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_nodejs}}/products",
+							"host": [
+								"{{base_url_nodejs}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exibir",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_nodejs}}/products/9218e2c7-6d91-4735-ac47-e63d776e5568",
+							"host": [
+								"{{base_url_nodejs}}"
+							],
+							"path": [
+								"products",
+								"9218e2c7-6d91-4735-ac47-e63d776e5568"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Nintendo Gamecube\",\r\n    \"price\": 500.00,\r\n    \"quantity\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_nodejs}}/products/9218e2c7-6d91-4735-ac47-e63d776e5568",
+							"host": [
+								"{{base_url_nodejs}}"
+							],
+							"path": [
+								"products",
+								"9218e2c7-6d91-4735-ac47-e63d776e5568"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inativar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_nodejs}}/products/9218e2c7-6d91-4735-ac47-e63d776e5568",
+							"host": [
+								"{{base_url_nodejs}}"
+							],
+							"path": [
+								"products",
+								"9218e2c7-6d91-4735-ac47-e63d776e5568"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Criar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"kaiorocha@gmail.com\",\r\n    \"name\":\"kaiorocha@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_nodejs}}/users",
+							"host": [
+								"{{base_url_nodejs}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_nodejs}}/users",
+							"host": [
+								"{{base_url_nodejs}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Avatar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/raiokocha/Pictures/270px-Crash_Bandicoot_3_capa.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_nodejs}}/users/avatar",
+							"host": [
+								"{{base_url_nodejs}}"
+							],
+							"path": [
+								"users",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "Atualizar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"kaiorocha@gmail.com\",\r\n    \"email\":\"kaiorocha@gmail.com\",\r\n    \"old_password\":\"12345678\",\r\n    \"password\":\"123456789\",\r\n    \"password_confirmation\":\"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_nodejs}}/profile",
+							"host": [
+								"{{base_url_nodejs}}"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_nodejs}}/profile",
+							"host": [
+								"{{base_url_nodejs}}"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"kaiorocha@gmail.com\",\r\n    \"password\":\"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_nodejs}}/sessions",
+							"host": [
+								"{{base_url_nodejs}}"
+							],
+							"path": [
+								"sessions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Password Forgot",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"kkaio.rocha@hotmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_nodejs}}/password/forgot",
+							"host": [
+								"{{base_url_nodejs}}"
+							],
+							"path": [
+								"password",
+								"forgot"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Password Reset",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"12345678\",\r\n    \"password_confirmation\": \"12345678\",\r\n    \"token\": \"365e4810-0c59-4814-a8cd-6f3a1ec7790d\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_nodejs}}/password/reset",
+							"host": [
+								"{{base_url_nodejs}}"
+							],
+							"path": [
+								"password",
+								"reset"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Listar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_nodejs}}/customers",
+							"host": [
+								"{{base_url_nodejs}}"
+							],
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exibir",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_nodejs}}/customers/21a3ccd2-c181-4150-a413-01e67187c3db",
+							"host": [
+								"{{base_url_nodejs}}"
+							],
+							"path": [
+								"customers",
+								"21a3ccd2-c181-4150-a413-01e67187c3db"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"kaiorocha@gmail.com\",\r\n    \"name\":\"Kaio Rocha Aguiar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_nodejs}}/customers",
+							"host": [
+								"{{base_url_nodejs}}"
+							],
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"kaiorocha@gmail.com\",\r\n    \"name\":\"Kaio Rocha\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_nodejs}}/customers/21a3ccd2-c181-4150-a413-01e67187c3db",
+							"host": [
+								"{{base_url_nodejs}}"
+							],
+							"path": [
+								"customers",
+								"21a3ccd2-c181-4150-a413-01e67187c3db"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_nodejs}}/customers/21a3ccd2-c181-4150-a413-01e67187c3db",
+							"host": [
+								"{{base_url_nodejs}}"
+							],
+							"path": [
+								"customers",
+								"21a3ccd2-c181-4150-a413-01e67187c3db"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Criar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customer_id\":\"21a3ccd2-c181-4150-a413-01e67187c3db\",\r\n    \"products\": [\r\n        {\r\n            \"id\":\"0127c11a-673b-4579-b3f1-75c7ac964fa6\",\r\n            \"quantity\":\"1\"  \r\n        },\r\n        {\r\n            \"id\":\"0127c11a-673b-4579-b3f1-75c7ac964fa6\",\r\n            \"quantity\":\"2\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_nodejs}}/orders",
+							"host": [
+								"{{base_url_nodejs}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
