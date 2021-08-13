@@ -32,7 +32,7 @@ Através do TypeORM implementaremos Entidades e Repositórios para cada recurso 
 - Route, Controller, Service, Entities, Repositories
 - AWS S3, SES Dev e Prod
 
-## Refatoracao
+## Refatoração
 - DDD
 - Generic TypeORM
 - Inversao de Dependencia (Remove Dependencia)
