@@ -81,6 +81,6 @@ yarn typeorm migration:run
 
 Os repositórios são geralmente um empacotador comum para seu modelo e o lugar onde você escreveria diferentes consultas em seu banco de dados. Um serviço, por outro lado, é uma camada para lidar com toda a lógica de seu aplicativo. Com base na experiência, é realmente útil separar a lógica e o invólucro do modelo, especialmente quando você está trabalhando em equipe ou grandes projetos.
 
-<img src="https://i.ibb.co/s1J9Dpp/Diagrama-em-branco.png" >
+<img src="https://i.ibb.co/VHjpqWF/Whats-App-Image-2021-08-17-at-15-20-53.jpg" >
 
 
